@@ -22,10 +22,11 @@ script:
   - git config --global user.name "Romain Lesur"
   - git clone https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git book-output
   - cd book-output/docs
-  - rm -rf ./
+  - rm -f ./*
   - cp ../../pulpdown.pdf pulpdown.pdf
+  - ls -a
   - cd ..
   - git add --all *
-  - git commit -m "Update pdf"
+  - git commit -m"Update pdf"
   - git push -q origin master
   
