@@ -21,8 +21,11 @@ script:
   - git config --global user.email "romain.lesur@gmail.com"
   - git config --global user.name "Romain Lesur"
   - git clone https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git book-output
-  - cd book-output/docs
-  - rm -f ./*
+  - ls -a
+  - cd book-output
+  - ls -a
+  - cd docs
+  - rm -f ./*.pdf
   - cp ../../pulpdown.pdf pulpdown.pdf
   - ls -a
   - cd ..
