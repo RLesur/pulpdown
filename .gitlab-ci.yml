@@ -1,0 +1,14 @@
+image: rlesur/weasydoc:latest
+
+pages:
+  stage: deploy
+  script:
+  - Rscript -e "devtools::install_github('rstudio/fontawesome')"
+  - Rscript -e "bookdown::render_book('index.Rmd', 'all')"
+  - mkdir public
+  - mv pulpdown.pdf public/pulpdown.pdf
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
