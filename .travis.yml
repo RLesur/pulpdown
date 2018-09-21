@@ -1,0 +1,34 @@
+branches:
+  only:
+  - master
+language: r
+sudo: false
+cache: 
+  packages: yes
+pandoc_version: 2.2.1
+
+addons:
+  apt:
+    packages:
+    - ttf-dejavu
+
+before_script:
+  - wget https://www.princexml.com/download/prince_12-1_ubuntu14.04_amd64.deb
+  - sudo dpkg -i prince_12-1_ubuntu14.04_amd64.deb
+  - rm prince_12-1_ubuntu14.04_amd64.deb
+
+script:
+  - Rscript -e "bookdown::render_book('index.Rmd', 'all')"
+  - git config --global user.email "romain.lesur@gmail.com"
+  - git config --global user.name "Romain Lesur"
+  - git clone -b gh-pages https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git book-output
+  - ls -a
+  - cd book-output
+  - ls -a
+  - rm -f ./*.pdf
+  - cp ../pulpdown.pdf ./pulpdown.pdf
+  - ls -a
+  - git status
+  - git add --all -f ./*
+  - git commit -m"Update pdf"
+  - git push origin gh-pages
