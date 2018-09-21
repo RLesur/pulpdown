@@ -30,5 +30,5 @@ script:
   - git status
   - git add --all -f ./docs/*
   - git commit -m"Update pdf"
-  - git push -q origin master
+  - git push origin master
   
