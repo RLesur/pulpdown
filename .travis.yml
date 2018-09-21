@@ -29,7 +29,8 @@ script:
   - cp ../../pulpdown.pdf pulpdown.pdf
   - ls -a
   - cd ..
-  - git add --all *
+  - git status
+  - git add --all ./docs/*
   - git commit -m"Update pdf"
   - git push -q origin master
   
