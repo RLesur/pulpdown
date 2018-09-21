@@ -18,17 +18,15 @@ script:
   - Rscript -e "bookdown::render_book('index.Rmd', 'all')"
   - git config --global user.email "romain.lesur@gmail.com"
   - git config --global user.name "Romain Lesur"
-  - git clone -b master https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git book-output
+  - git clone -b gh-pages https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git book-output
   - ls -a
   - cd book-output
   - ls -a
-  - cd docs
   - rm -f ./*.pdf
-  - cp ../../pulpdown.pdf ./pulpdown.pdf
+  - cp ../pulpdown.pdf ./pulpdown.pdf
   - ls -a
-  - cd ..
   - git status
-  - git add --all -f ./docs/*
+  - git add --all -f ./*
   - git commit -m"Update pdf"
-  - git push origin master
+  - git push origin gh-pages
   
