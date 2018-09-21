@@ -18,7 +18,7 @@ script:
   - Rscript -e "bookdown::render_book('index.Rmd', 'all')"
   - git config --global user.email "romain.lesur@gmail.com"
   - git config --global user.name "Romain Lesur"
-  - git clone https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git book-output
+  - git clone -b master https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git book-output
   - ls -a
   - cd book-output
   - ls -a
