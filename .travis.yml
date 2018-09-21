@@ -3,7 +3,7 @@ sudo: false
 cache: 
   packages: yes
   directories:
-    - $TRAVIS_BUILD_DIR
+    - $TRAVIS_BUILD_DIR/book
 pandoc_version: 2.2.1
 
 addons:
@@ -17,16 +17,16 @@ before_script:
   - rm prince_12-1_ubuntu14.04_amd64.deb
 
 script:
-  - Rscript -e "bookdown::render_book('index.Rmd', 'all')"
+  - Rscript -e "bookdown::render_book('index.Rmd', 'all', output_dir = 'book')"
   - git config --global user.email "romain.lesur@gmail.com"
   - git config --global user.name "Romain Lesur"
-  - git clone https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git book-output
+  - git clone https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git book-output
   - ls -a
   - cd book-output
   - ls -a
   - cd docs
   - rm -f ./*.pdf
-  - cp ../../pulpdown.pdf pulpdown.pdf
+  - cp ../../book/pulpdown.pdf ./pulpdown.pdf
   - ls -a
   - cd ..
   - git status
