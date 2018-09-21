@@ -1,6 +1,6 @@
 Package: pulpdown
 Type: Book
-Title: A Demo Template for Pulp Magazines.
+Title: A Demo Template for Pulp Magazines with Bookdown.
 Version: 0.0.1
 Imports: bookdown, fontawesome, weasydoc
 Remotes: rstudio/fontawesome, RLesur/weasydoc
