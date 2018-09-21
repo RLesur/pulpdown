@@ -30,7 +30,7 @@ script:
   - ls -a
   - cd ..
   - git status
-  - git add --all ./docs/*
+  - git add --all -f ./docs/*
   - git commit -m"Update pdf"
   - git push -q origin master
   
