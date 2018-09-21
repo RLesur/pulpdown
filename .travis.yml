@@ -22,7 +22,6 @@ script:
   - git config --global user.email "romain.lesur@gmail.com"
   - git config --global user.name "Romain Lesur"
   - git clone -b gh-pages https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git book-output
-  - cd book-output
   - rm -f ./book-output/*.pdf
   - cp ./pulpdown.pdf ./book-output/pulpdown.pdf
   - git add --all -f ./*
