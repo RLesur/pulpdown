@@ -24,6 +24,7 @@ script:
   - git clone -b gh-pages https://${GITHUB_PAT}@github.com/${TRAVIS_REPO_SLUG}.git book-output
   - rm -f ./book-output/*.pdf
   - cp ./pulpdown.pdf ./book-output/pulpdown.pdf
+  - cd book-output
   - git add --all -f ./*
   - git commit -m"Update pdf"
   - git push origin gh-pages
