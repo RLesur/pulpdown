@@ -7,4 +7,17 @@ This template relies only on HTML and CSS. All the styling rules are included in
 Since GitLab offers a git version control service and a CI/CD service in one application, the easiest way to build this book is to import this repository on GitLab^[see an example here: <https://gitlab.com/RLesur/pulpdown>.].  
 Once imported, the book will be automatically built after each commit and you will find the pdf file in the artifacts folder^[see <https://gitlab.com/RLesur/pulpdown/pipelines>.] or directly using the url: `https://username.gitlab.io/repo/pulpdown.pdf`.
 
-## Build the book with Travis
+## Build the book with Travis {-}
+
+You need to modify the `.travis.yml` file to setup your email and name.  
+As explained in @bookdown (see [chapter 6](https://bookdown.org/yihui/bookdown/github.html)), you have to grant Travis to write on your repository using the `GITHUB_PAT` environment variable.
+
+## Build the book locally {-}
+
+If you prefer to build the book with your system, you have to install the development version of the weasydoc [@R-weasydoc] package and the Prince XML software (<https://www.princexml.com>).
+
+## Customize the template {-}
+
+All the styling is done using CSS rules. You will find some specific at-rules for pages layouts (`@page {...}`): these rules are defined by the CSS paged media modules. You can find some references on CSS paged media in the [weasydoc `README` file](https://github.com/RLesur/weasydoc#readme).
+
+This template is far from perfect. I think nobody will need it. I hope you will be interested in CSS paged media. 
