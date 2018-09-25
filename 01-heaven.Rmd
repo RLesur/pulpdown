@@ -20,4 +20,4 @@ If you prefer to build the book with your system, you have to install the develo
 
 All the styling is done using CSS rules. You will find some specific at-rules for pages layouts (`@page {...}`): these rules are defined by the CSS paged media modules. You can find some references on CSS paged media in the [weasydoc `README` file](https://github.com/RLesur/weasydoc#readme).
 
-This template is far from perfect. I think nobody will need it. I hope you will be interested in CSS paged media. 
+This template is far from perfect. I think nobody will need it. I only hope you will be interested in CSS paged media. 
